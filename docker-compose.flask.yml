@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:    
+  flask:
+    build:
+      dockerfile: ./dockerfile
+      context: .
+    image: devops_challenge/flask
+    ports:
+      - 8888:8888
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
