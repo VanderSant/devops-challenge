@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/pre-commit/mirrors-pylint
+    rev: ''  # Você pode especificar uma versão específica do Pylint aqui (ex: rev: v2.9.6)
+    hooks:
+      - id: pylint
+        args: [--rcfile=.pylintrc]  # Argumentos opcionais para o pylint, aqui você pode definir um arquivo de configuração personalizado
+  - repo: https://github.com/psf/black
+    rev: stable
+    hooks:
+      - id: black
