@@ -29,3 +29,7 @@ gunicorn --bind 0.0.0.0:8888 wsgi:app
 ```
 
 Any questions please contact: [anderson.lima@shawandpartners.com](mailto:anderson.lima@shawandpartners.com)
+
+# Aplications
+- Develop: https://aavhkybvm3.us-west-2.awsapprunner.com
+- Main: https://pvie9yrbep.us-west-2.awsapprunner.com
