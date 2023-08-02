@@ -3,7 +3,7 @@ version: "3.7"
 services:    
   flask:
     build:
-      dockerfile: ./dockerfile
+      dockerfile: ./Dockerfile
       context: .
     image: devops_challenge/flask
     ports:
