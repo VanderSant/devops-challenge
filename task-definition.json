@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-2:495975474841:task-definition/devops_challenge_task:5",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:495975474841:task-definition/devops_challenge_task:6",
     "containerDefinitions": [
         {
             "name": "devops_challenge_container",
-            "image": "495975474841.dkr.ecr.us-west-2.amazonaws.com/devops_challenge_repository",
+            "image": "495975474841.dkr.ecr.us-west-2.amazonaws.com/devops_challenge_repository:8b3cd9ebdb9d67592f934a8e0cc1e7bed9426507",
             "cpu": 0,
             "portMappings": [
                 {
@@ -19,10 +19,8 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -30,8 +28,7 @@
                     "awslogs-group": "/ecs/",
                     "awslogs-region": "us-west-2",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             }
         }
     ],
@@ -39,7 +36,7 @@
     "taskRoleArn": "arn:aws:iam::495975474841:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::495975474841:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 5,
+    "revision": 6,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -76,16 +73,17 @@
         "EC2",
         "FARGATE"
     ],
-    "runtimePlatform": {
-        "cpuArchitecture": "X86_64",
-        "operatingSystemFamily": "LINUX"
-    },
     "requiresCompatibilities": [
         "EC2",
         "FARGATE"
     ],
     "cpu": "1024",
     "memory": "3072",
-    "registeredAt": 1690996744.579,
-    "registeredBy": "arn:aws:iam::495975474841:root"
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2023-08-02T17:51:43.321Z",
+    "registeredBy": "arn:aws:iam::495975474841:user/devops_challenge_2",
+    "tags": []
 }
