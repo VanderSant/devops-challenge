@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cd "$( dirname "${BASH_SOURCE[0]}" )"/..
+
+# Define a função para executar o Black e o Pylint
+echo "Running Black..."
+black --check src/**.py
+if [ $? -ne 0 ]; then
+    echo "Code not properly formatted. Please run make format and git add again."
+    git reset -q HEAD  
+    exit 1
+fi
+
+echo "Running Pylint..."
+pylint src/**.py || exit 1
+if [ $? -ne 0 ]; then
+    echo "Code not properly linted. Please run make lint and git add again."
+    git reset -q HEAD  
+    exit 1
+fi
