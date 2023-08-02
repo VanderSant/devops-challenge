@@ -9,4 +9,4 @@ COPY ./src .
 
 RUN pip3 install -r requirements.txt
 
-CMD ["gunicorn", "--bind=0.0.0.0:8888", "wsgi:app"]
+# CMD ["gunicorn", "--bind=0.0.0.0:8888", "wsgi:app"]
