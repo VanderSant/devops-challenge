@@ -1,20 +1,20 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-2:495975474841:task-definition/devops_challenge_task:8",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:495975474841:task-definition/devops_challenge_task_2:1",
     "containerDefinitions": [
         {
-            "name": "devops_challenge_container",
+            "name": "devops_challenge_container_2",
             "image": "495975474841.dkr.ecr.us-west-2.amazonaws.com/devops_challenge_repository",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "devops_challenge_container-80-tcp",
+                    "name": "devops_challenge_container_2-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
                     "appProtocol": "http"
                 },
                 {
-                    "name": "devops_challenge_container-8888-tcp",
+                    "name": "devops_challenge_container_2-8888-tcp",
                     "containerPort": 8888,
                     "hostPort": 8888,
                     "protocol": "tcp",
@@ -31,7 +31,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/devops_challenge_task",
+                    "awslogs-group": "/ecs/",
                     "awslogs-region": "us-west-2",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -39,10 +39,9 @@
             }
         }
     ],
-    "family": "devops_challenge_task",
+    "family": "devops_challenge_task_2",
     "executionRoleArn": "arn:aws:iam::495975474841:role/ecsTaskExecutionRole",
-    "networkMode": "awsvpc",
-    "revision": 8,
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -65,20 +64,15 @@
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
         },
         {
-            "name": "ecs.capability.task-eni"
-        },
-        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
     "compatibilities": [
-        "EC2",
-        "FARGATE"
+        "EC2"
     ],
     "requiresCompatibilities": [
-        "EC2",
-        "FARGATE"
+        "EC2"
     ],
     "cpu": "1024",
     "memory": "3072",
@@ -86,7 +80,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-08-02T18:44:37.890Z",
+    "registeredAt": "2023-08-02T18:55:19.856Z",
     "registeredBy": "arn:aws:iam::495975474841:root",
     "tags": []
 }
