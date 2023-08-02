@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-2:495975474841:task-definition/devops_challenge_task:2",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:495975474841:task-definition/devops_challenge_task:5",
     "containerDefinitions": [
         {
             "name": "devops_challenge_container",
@@ -7,18 +7,14 @@
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "devops_challenge_container-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
-                    "protocol": "tcp",
-                    "appProtocol": "http"
+                    "protocol": "tcp"
                 },
                 {
-                    "name": "devops_challenge_container-8888-tcp",
                     "containerPort": 8888,
                     "hostPort": 8888,
-                    "protocol": "tcp",
-                    "appProtocol": "http"
+                    "protocol": "tcp"
                 }
             ],
             "essential": true,
@@ -40,8 +36,10 @@
         }
     ],
     "family": "devops_challenge_task",
+    "taskRoleArn": "arn:aws:iam::495975474841:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::495975474841:role/ecsTaskExecutionRole",
-    "revision": 2,
+    "networkMode": "awsvpc",
+    "revision": 5,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -58,10 +56,16 @@
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
             "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
@@ -69,18 +73,19 @@
     ],
     "placementConstraints": [],
     "compatibilities": [
-        "EC2"
+        "EC2",
+        "FARGATE"
     ],
-    "requiresCompatibilities": [
-        "EC2"
-    ],
-    "cpu": "1024",
-    "memory": "3072",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-08-02T16:19:34.258Z",
-    "registeredBy": "arn:aws:iam::495975474841:root",
-    "tags": []
+    "requiresCompatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "registeredAt": 1690996744.579,
+    "registeredBy": "arn:aws:iam::495975474841:root"
 }
