@@ -2,6 +2,7 @@
 FROM python:3.8-slim-buster
 
 WORKDIR /app
+EXPOSE 8888
 
 COPY ./src .
 
