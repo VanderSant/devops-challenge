@@ -1,37 +1,30 @@
-import os
+""" Devops challenge main application."""
 import json
-import subprocess
 from flask import Flask
-from flask import request
-from subprocess import PIPE, Popen
 
 app = Flask(__name__)
 app.debug = True
 
-@app.route('/healthcheck')
+
+@app.route("/healthcheck")
 def status():
-    resp = {
-        "Status":"heart beating steady and strong"
-    }
+    """Route to get api status."""
+    resp = {"Status": "heart beating steady and strong"}
     response = app.response_class(
-        response=json.dumps(resp),
-        status=200,
-        mimetype='application/json'
+        response=json.dumps(resp), status=200, mimetype="application/json"
     )
     return response
 
-@app.route('/') 
+
+@app.route("/")
 def main():
-    resp = {
-        "App Test":"Alive"
-    }
+    """Api main route."""
+    resp = {"App Test": "Alive"}
     response = app.response_class(
-        response=json.dumps(resp),
-        status=200,
-        mimetype='application/json'
+        response=json.dumps(resp), status=200, mimetype="application/json"
     )
     return response
 
 
-if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8888)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8888)
