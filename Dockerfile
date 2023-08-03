@@ -17,4 +17,4 @@ COPY ./src .
 
 RUN pip install -r requirements.txt
 
-CMD ["gunicorn", "--bind=0.0.0.0:8888", "wsgi:app"]
+CMD ["python", "application.py"]
