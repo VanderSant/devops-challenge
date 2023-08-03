@@ -1,12 +1,20 @@
-# FROM python3.9
-FROM python:3.8-slim-buster
+FROM ubuntu:22.04
 
 WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    git \
+    apt-utils \
+    wget
+
+RUN apt-get install -y python-is-python3
+RUN apt-get install -y  python3-pip
+
 EXPOSE 8888
 EXPOSE 80
 
 COPY ./src .
 
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 CMD ["gunicorn", "--bind=0.0.0.0:8888", "wsgi:app"]
