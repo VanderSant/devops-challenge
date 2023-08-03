@@ -5,3 +5,5 @@ pylint==2.15.8
 black==23.7.0
 bandit==1.7.5
 pip-audit==2.6.1
+werkzeug==2.0.3
+pytest==7.4.0
