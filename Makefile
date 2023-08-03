@@ -4,12 +4,15 @@ install:
 	pip install -r src/requirements.txt
 
 format:
-	black src
+	black src/ tests/
 	black src --check
 
 lint:
 	pylint src/**.py
 
+test:
+	pytest
+	
 sec:
 	bandit -r .
 	pip-audit -r src/requirements.txt
