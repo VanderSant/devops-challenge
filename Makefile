@@ -9,3 +9,7 @@ format:
 
 lint:
 	pylint src/**.py
+
+sec:
+	bandit -r .
+	pip-audit -r src/requirements.txt
