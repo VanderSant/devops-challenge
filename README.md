@@ -1,4 +1,4 @@
-# DevOps Challenge
+# 💡 DevOps Challenge
 
 Fork this project and build the infrastructure of this API the way you want, you can use Docker Compose, AWS or any other way you like, the goal here is to analyze your commits to understand the way you work.
 
@@ -30,6 +30,24 @@ gunicorn --bind 0.0.0.0:8888 wsgi:app
 
 Any questions please contact: [anderson.lima@shawandpartners.com](mailto:anderson.lima@shawandpartners.com)
 
-# Aplications
+# 📍 Run local
+ ```sh
+ sudo chmod +x run.sh
+ ./run.sh
+ ```
+
+ # ✋ Commands
+
+`install`: Install all python depedencies
+
+`format`: Format all code
+
+`lint`: Lint all code
+
+`test`: Perform all endpoint test
+
+`sec`: Perform security test into all code and packages
+
+# 🚀 Aplications
 - Develop: https://aavhkybvm3.us-west-2.awsapprunner.com
 - Main: https://pvie9yrbep.us-west-2.awsapprunner.com
