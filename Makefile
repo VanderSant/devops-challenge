@@ -5,6 +5,7 @@ install:
 
 format:
 	black src
+	black src --check
 
 lint:
 	pylint src/**.py
