@@ -1,10 +1,14 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
-    -   repo: https://github.com/ambv/black
-        rev: 22.3.0
+    -   repo: local
         hooks:
             -   id: black
+                name: black
+                entry: black
+                language: system
+                types: [python]
+                require_serial: true
 
     -   repo: local
         hooks:
