@@ -13,6 +13,6 @@ def client():
     """
 
     app.config["TESTING"] = True
-    client = app.test_client()
+    api_client = app.test_client()
 
-    yield client
+    yield api_client
