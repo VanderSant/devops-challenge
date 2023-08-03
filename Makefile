@@ -8,7 +8,7 @@ format:
 	black src --check
 
 lint:
-	pylint src/**.py
+	pylint src/**.py tests/**.py
 
 test:
 	pytest
